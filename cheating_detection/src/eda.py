@@ -15,7 +15,7 @@ dat_rows = dat.shape[0]
 dat['strat_sample'] = dat['high_conf_clean'].fillna('UNK').astype(str) +'_'+ dat[target].fillna('UNK').astype(str)
 data_sample = dat.groupby('strat_sample', group_keys=False).apply( lambda x: x.sample(frac=0.4, random_state=22) )
 data_sample.drop(columns = ['strat_sample'],inplace=True)
-
+ 
 profile = ProfileReport(
 data_sample,
     title="Sample Pandas DataFrame Profile",
