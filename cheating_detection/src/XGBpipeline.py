@@ -113,7 +113,6 @@ class XGBoostPipeline:
     # -----------------------------
  
 
-
     def shap_analysis(self, X_sample,  plot_path = None):
         """
         Compute SHAP values and optionally display a beeswarm plot.
