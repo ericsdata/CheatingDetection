@@ -16,14 +16,14 @@ dat['strat_sample'] = dat['high_conf_clean'].fillna('UNK').astype(str) +'_'+ dat
 data_sample = dat.groupby('strat_sample', group_keys=False).apply( lambda x: x.sample(frac=0.4, random_state=22) )
 data_sample.drop(columns = ['strat_sample'],inplace=True)
 
-#profile = ProfileReport(
-#data_sample,
-#    title="Sample Pandas DataFrame Profile",
-#    explorative=True,
-#    vars={ "target":target },
-#)
+profile = ProfileReport(
+data_sample,
+    title="Sample Pandas DataFrame Profile",
+    explorative=True,
+   vars={ "target":target },
+)
 
-#profile.to_file("..\output\data_sample.html")
+profile.to_file("..\output\data_sample.html")
 
 import XGBpipeline 
 
